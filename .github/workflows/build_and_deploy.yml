@@ -27,14 +27,14 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Build release apk
-        run: ./gradlew assembleRelease
+     # - name: Build release apk
+      #  run: ./gradlew assembleRelease
 
-      - name: Upload release apk
-        uses: actions/upload-artifact@v4
-        with:
-          name: mastodon-release.apk
-          path: mastodon/build/outputs/apk/release/mastodon-release.apk
+    #  - name: Upload release apk
+     #   uses: actions/upload-artifact@v4
+    #    with:
+        #  name: mastodon-release.apk
+       #   path: mastodon/build/outputs/apk/release/mastodon-release.apk
 
       - name: Build githubRelease apk
         run: ./gradlew assembleGithubRelease
