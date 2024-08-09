@@ -1,5 +1,5 @@
 name: Build and deploy
- 
+
 on:
   push:
     branches:
@@ -27,7 +27,7 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
 
-      
+
       - name: Build release apk
         run: ./gradlew assembleRelease
         env:
