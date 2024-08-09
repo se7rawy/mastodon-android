@@ -27,12 +27,8 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
 
-
       - name: Build release apk
         run: ./gradlew assembleRelease
-        env:
-          KEYSTORE_FILE: ${{ steps.android_keystore.outputs.filePath }}
-          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
 
       - name: Upload release apk
         uses: actions/upload-artifact@v4
@@ -42,9 +38,6 @@ jobs:
 
       - name: Build githubRelease apk
         run: ./gradlew assembleGithubRelease
-        env:
-          KEYSTORE_FILE: ${{ steps.android_keystore.outputs.filePath }}
-          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
 
       - name: Upload githubRelease apk
         uses: actions/upload-artifact@v4
