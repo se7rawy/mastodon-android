@@ -1,5 +1,5 @@
 name: Build and deploy
-
+ 
 on:
   push:
     branches:
@@ -27,18 +27,22 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
 
-     # - name: Build release apk
-      #  run: ./gradlew assembleRelease
+    
+      - name: Prepare Gradle environment
+        run: |
+          echo "apply from: 'ci_signing.gradle'" >> mastodon/build.gradle
+          echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
 
-    #  - name: Upload release apk
-     #   uses: actions/upload-artifact@v4
-    #    with:
-        #  name: mastodon-release.apk
-       #   path: mastodon/build/outputs/apk/release/mastodon-release.apk
-
+      
+      - name: Build release apk
+        run: ./gradlew assembleRelease
+        
+      - name: Upload release apk
+        uses: actions/upload-artifact@v4
+        
       - name: Build githubRelease apk
         run: ./gradlew assembleGithubRelease
-
+        
       - name: Upload githubRelease apk
         uses: actions/upload-artifact@v4
         with:
