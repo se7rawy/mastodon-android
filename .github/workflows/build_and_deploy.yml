@@ -39,7 +39,9 @@ jobs:
         
       - name: Upload release apk
         uses: actions/upload-artifact@v4
-        
+        with:
+          name: mastodon-release.apk
+          path: mastodon/build/outputs/apk/release/mastodon-release.apk
       - name: Build githubRelease apk
         run: ./gradlew assembleGithubRelease
         
