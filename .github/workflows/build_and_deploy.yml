@@ -30,7 +30,7 @@ jobs:
     
       - name: Prepare Gradle environment
         run: |
- 
+          echo "apply from: 'ci_signing.gradle'" >> mastodon/build.gradle
           echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
 
       
@@ -41,7 +41,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: mastodon-release.apk
-          path: build/outputs/apk/release/mastodon-release.apk
+          path: mastodon/build/outputs/apk/release/mastodon-release.apk
       - name: Build githubRelease apk
         run: ./gradlew assembleGithubRelease
         
@@ -49,10 +49,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: mastodon-githubRelease.apk
-          path: build/outputs/apk/githubRelease/mastodon-githubRelease.apk
+          path: mastodon/build/outputs/apk/githubRelease/mastodon-githubRelease.apk
 
       - name: Upload mappings
         uses: actions/upload-artifact@v4
         with:
           name: mappings
-          path: build/outputs/mapping/*/mapping.txt
+          path: mastodon/build/outputs/mapping/*/mapping.txt
