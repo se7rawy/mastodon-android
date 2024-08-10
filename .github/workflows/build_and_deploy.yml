@@ -50,30 +50,19 @@ jobs:
 
       - name: Build release apk
         run: ./gradlew assembleRelease
-        env:
-          KEYSTORE_FILE: ${{ steps.android_keystore.outputs.filePath }}
-          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+       # env:
+        #  KEYSTORE_FILE: ${{ steps.android_keystore.outputs.filePath }}
+        #  KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
 
-      - name: Upload release apk
-        uses: actions/upload-artifact@v4
+# Sign the apk
+      - name: Sign APK
+        uses: r0adkll/sign-android-release@v1
+        # ID used to access action output
+        id: sign_app
         with:
-          name: mastodon-release.apk
-          path: mastodon/build/outputs/apk/release/mastodon-release.apk
+          releaseDirectory: se7rawy/build/outputs/apk
+          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
+          alias: ${{ secrets.ALIAS }}
+          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
+          keyPassword: ${{ secrets.KEY_PASSWORD }}
 
-      - name: Build githubRelease apk
-        run: ./gradlew assembleGithubRelease
-        env:
-          KEYSTORE_FILE: ${{ steps.android_keystore.outputs.filePath }}
-          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
-
-      - name: Upload githubRelease apk
-        uses: actions/upload-artifact@v4
-        with:
-          name: mastodon-githubRelease.apk
-          path: mastodon/build/outputs/apk/githubRelease/mastodon-githubRelease.apk
-
-      - name: Upload mappings
-        uses: actions/upload-artifact@v4
-        with:
-          name: mappings
-          path: mastodon/build/outputs/mapping/*/mapping.txt
