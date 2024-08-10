@@ -37,7 +37,6 @@ jobs:
 
       - name: Prepare Gradle environment
         run: |
-          echo "apply from: 'ci_signing.gradle'" >> mastodon/build.gradle
           echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
        #- name: Build and deploy to Google Play
        #  run: bundle exec fastlane deploy
