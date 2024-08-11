@@ -47,15 +47,15 @@ jobs:
        #   SUPPLY_SKIP_UPLOAD_METADATA: true
        #   SUPPLY_SKIP_UPLOAD_CHANGELOGS: true
 
-      - name: Build release apk
+      - name: Build debug apk
         run: ./gradlew assembleDebug
        # env:
         #  KEYSTORE_FILE: ${{ steps.android_keystore.outputs.filePath }}
         #  KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
 
-      - name: Upload release apk
+      - name: Upload debug apk
         uses: actions/upload-artifact@v4
         with:
-          name: mastodon-release.apk
-          path: mastodon/build/outputs/apk/release/mastodon-release.apk
+          name: se7rawy-debug.apk
+          path: se7rawy/build/outputs/apk/se7rawy-debug.apk
 
