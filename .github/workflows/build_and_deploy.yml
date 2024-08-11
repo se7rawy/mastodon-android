@@ -48,7 +48,7 @@ jobs:
        #   SUPPLY_SKIP_UPLOAD_CHANGELOGS: true
 
       - name: Build release apk
-        run: ./gradlew assembleRelease
+        run: ./gradlew assembleDebug
        # env:
         #  KEYSTORE_FILE: ${{ steps.android_keystore.outputs.filePath }}
         #  KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
