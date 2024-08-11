@@ -56,6 +56,6 @@ jobs:
       - name: Upload debug apk
         uses: actions/upload-artifact@v4
         with:
-          name: se7rawy-debug.apk
-          path: se7rawy/build/outputs/apk/se7rawy-debug.apk
+          name: mastodon-debug.apk
+          path: mastodon/build/outputs/apk/mastodon-debug.apk
 
