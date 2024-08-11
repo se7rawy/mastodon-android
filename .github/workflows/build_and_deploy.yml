@@ -53,15 +53,9 @@ jobs:
         #  KEYSTORE_FILE: ${{ steps.android_keystore.outputs.filePath }}
         #  KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
 
-# Sign the apk
-      - name: Sign APK
-        uses: r0adkll/sign-android-release@v1
-        # ID used to access action output
-        id: sign_app
+      - name: Upload release apk
+        uses: actions/upload-artifact@v4
         with:
-          releaseDirectory: se7rawy/build/outputs/apk
-          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
-          alias: ${{ secrets.ALIAS }}
-          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
-          keyPassword: ${{ secrets.KEY_PASSWORD }}
+          name: mastodon-release.apk
+          path: mastodon/build/outputs/apk/release/mastodon-release.apk
 
