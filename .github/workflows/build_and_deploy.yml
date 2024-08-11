@@ -57,5 +57,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: mastodon-debug.apk
-          path: mastodon/build/outputs/apk/mastodon-debug.apk
+          path: mastodon/build/outputs/apk/debug/mastodon-debug.apk
 
