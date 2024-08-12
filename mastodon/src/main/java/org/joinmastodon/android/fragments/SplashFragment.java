@@ -22,7 +22,6 @@ import org.joinmastodon.android.api.requests.catalog.GetCatalogDefaultInstances;
 import org.joinmastodon.android.api.requests.instance.GetInstance;
 import org.joinmastodon.android.fragments.onboarding.InstanceCatalogSignupFragment;
 import org.joinmastodon.android.fragments.onboarding.InstanceChooserLoginFragment;
-import org.joinmastodon.android.fragments.onboarding.InstanceCatalogFragment;
 import org.joinmastodon.android.fragments.onboarding.InstanceRulesFragment;
 import org.joinmastodon.android.model.Instance;
 import org.joinmastodon.android.model.catalog.CatalogDefaultInstance;
@@ -124,7 +123,7 @@ public class SplashFragment extends AppKitFragment{
 		boolean isSignup=v.getId()==R.id.btn_get_started;
 		extras.putBoolean("signup", isSignup);
 		extras.putString("defaultServer", chosenDefaultServer);
-		Nav.go(getActivity(), isSignup ? InstanceCatalogSignupFragment.class : loadInstanceInfo("najmon.com", false), extras);
+		Nav.go(getActivity(), isSignup ? InstanceCatalogSignupFragment.class : InstanceChooserLoginFragment.loadInstanceInfo("najmon.com", false), extras);
 		
 	}
 
