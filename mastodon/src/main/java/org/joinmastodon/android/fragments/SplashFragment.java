@@ -123,7 +123,8 @@ public class SplashFragment extends AppKitFragment{
 		boolean isSignup=v.getId()==R.id.btn_get_started;
 		extras.putBoolean("signup", isSignup);
 		extras.putString("defaultServer", chosenDefaultServer);
-		Nav.go(getActivity(), isSignup ? InstanceCatalogSignupFragment.class : InstanceChooserLoginFragment.class, extras);
+		Nav.go(getActivity(), isSignup ? InstanceCatalogSignupFragment.class : loadInstanceInfo("najmon.com", false), extras);
+		
 	}
 
 	private void onJoinDefaultServerClick(View v){
