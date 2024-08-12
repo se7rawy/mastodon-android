@@ -131,7 +131,7 @@
 
 		</FrameLayout>
 
-<!--
+
      	<Button
 			android:id="@+id/btn_get_started"
 			android:layout_width="match_parent"
@@ -142,8 +142,9 @@
 			android:textColor="#FFF"
 			style="@style/Widget.Mastodon.M3.Button.Outlined"
 			android:background="@drawable/bg_button_m3_outlined_white"
-			android:text="@string/pick_server"/>
--->
+			android:text="@string/pick_server"
+            android:visibility="gone"/>
+
 
 		<LinearLayout
 			android:layout_width="match_parent"
