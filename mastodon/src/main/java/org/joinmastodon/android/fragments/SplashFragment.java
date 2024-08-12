@@ -22,6 +22,7 @@ import org.joinmastodon.android.api.requests.catalog.GetCatalogDefaultInstances;
 import org.joinmastodon.android.api.requests.instance.GetInstance;
 import org.joinmastodon.android.fragments.onboarding.InstanceCatalogSignupFragment;
 import org.joinmastodon.android.fragments.onboarding.InstanceChooserLoginFragment;
+import org.joinmastodon.android.fragments.onboarding.InstanceCatalogFragment;
 import org.joinmastodon.android.fragments.onboarding.InstanceRulesFragment;
 import org.joinmastodon.android.model.Instance;
 import org.joinmastodon.android.model.catalog.CatalogDefaultInstance;
@@ -60,11 +61,6 @@ public class SplashFragment extends AppKitFragment{
 	private Uri currentInviteLink;
 	private ProgressDialog instanceLoadingProgress;
 	private String inviteCode;
-
-private InstanceCatalogFragment a = new InstanceCatalogFragment();
-
-
-
 
 	@Override
 	public void onCreate(Bundle savedInstanceState){
@@ -128,7 +124,7 @@ private InstanceCatalogFragment a = new InstanceCatalogFragment();
 		boolean isSignup=v.getId()==R.id.btn_get_started;
 		extras.putBoolean("signup", isSignup);
 		extras.putString("defaultServer", chosenDefaultServer);
-		Nav.go(getActivity(), isSignup ? InstanceCatalogSignupFragment.class : a.loadInstanceInfo("najmon.com", false), extras);
+		Nav.go(getActivity(), isSignup ? InstanceCatalogSignupFragment.class : loadInstanceInfo("najmon.com", false), extras);
 		
 	}
 
