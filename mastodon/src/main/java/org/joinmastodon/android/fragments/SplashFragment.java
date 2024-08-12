@@ -36,6 +36,7 @@ import org.parceler.Parcels;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
+import java.net.URISyntaxException;
 
 import androidx.annotation.Nullable;
 import me.grishka.appkit.Nav;
