@@ -71,7 +71,7 @@ public class SplashFragment extends AppKitFragment{
 	@Override
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState){
 		contentView=(SizeListenerFrameLayout) inflater.inflate(R.layout.fragment_splash, container, false);
-		contentView.findViewById(R.id.btn_get_started).setOnClickListener(this::onButtonClick);
+	//	contentView.findViewById(R.id.btn_get_started).setOnClickListener(this::onButtonClick);
 		contentView.findViewById(R.id.btn_log_in).setOnClickListener(this::onButtonClick);
 		defaultServerButton=contentView.findViewById(R.id.btn_join_default_server);
 		defaultServerButton.setText(getString(R.string.join_default_server, chosenDefaultServer));
