@@ -49,7 +49,6 @@ public class InstanceChooserLoginFragment extends InstanceCatalogFragment{
 	@Override
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
-		
 		dataLoaded();
 		setTitle(R.string.login_title);
 		if(!loadedAutocomplete){
