@@ -142,7 +142,8 @@
 			android:textColor="#FFF"
 			style="@style/Widget.Mastodon.M3.Button.Outlined"
 			android:background="@drawable/bg_button_m3_outlined_white"
-			android:text="@string/pick_server"/>
+			android:text="@string/pick_server"
+            android:visibility="gone"/>
 
 
 		<LinearLayout
