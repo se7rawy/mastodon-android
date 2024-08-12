@@ -77,12 +77,15 @@ public class InstanceChooserLoginFragment extends InstanceCatalogFragment{
 			if(!foundExactMatch && currentSearchQuery.indexOf('.')!=-1)
 				filteredData.add(0, fakeInstance);
 		}
-		filteredData.add("najmon.com");
+		
 		if(filteredData.isEmpty()){
-			for(CatalogInstance inst:data){
+			CatalogInstance inst;
+			inst.normalizedDomain="najmon.com";
+			filteredData.add(inst);
+			/*for(CatalogInstance inst:data){
 				if(inst.normalizedDomain.equals("najmon.com")){
 					filteredData.add(inst);
-				}
+				}*/
 			}
 		}
 		UiUtils.updateList(prevData, filteredData, list, adapter, Objects::equals);
