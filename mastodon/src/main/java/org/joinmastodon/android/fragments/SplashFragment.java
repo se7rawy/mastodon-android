@@ -36,7 +36,12 @@ import org.parceler.Parcels;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
+
+import java.io.IOException;
+import java.net.IDN;
+import java.net.URI;
 import java.net.URISyntaxException;
+
 
 import androidx.annotation.Nullable;
 import me.grishka.appkit.Nav;
@@ -117,6 +122,29 @@ public class SplashFragment extends AppKitFragment{
 			loadAndChooseDefaultServer();
 
 		return contentView;
+	}
+	
+	
+	protected String normalizeInstanceDomain(String _domain){
+		if(TextUtils.isEmpty(_domain))
+			return null;
+		if(_domain.contains(":")){
+			try{
+				_domain=Uri.parse(_domain).getAuthority();
+			}catch(Exception ignore){
+			}
+			if(TextUtils.isEmpty(_domain))
+				return null;
+		}
+		String domain;
+		try{
+			domain=IDN.toASCII(_domain);
+		}catch(IllegalArgumentException x){
+			return null;
+		}
+		if(redirects.containsKey(domain))
+			return redirects.get(domain);
+		return domain;
 	}
 
 protected void loadInstanceInfo(String _domain, boolean isFromRedirect){
