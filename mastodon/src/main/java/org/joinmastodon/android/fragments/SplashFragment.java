@@ -61,6 +61,11 @@ public class SplashFragment extends AppKitFragment{
 	private ProgressDialog instanceLoadingProgress;
 	private String inviteCode;
 
+private InstanceCatalogFragment a = new InstanceCatalogFragment();
+
+
+
+
 	@Override
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
@@ -123,7 +128,7 @@ public class SplashFragment extends AppKitFragment{
 		boolean isSignup=v.getId()==R.id.btn_get_started;
 		extras.putBoolean("signup", isSignup);
 		extras.putString("defaultServer", chosenDefaultServer);
-		Nav.go(getActivity(), isSignup ? InstanceCatalogSignupFragment.class : InstanceChooserLoginFragment.loadInstanceInfo("najmon.com", false), extras);
+		Nav.go(getActivity(), isSignup ? InstanceCatalogSignupFragment.class : a.loadInstanceInfo("najmon.com", false), extras);
 		
 	}
 
