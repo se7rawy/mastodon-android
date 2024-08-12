@@ -149,7 +149,7 @@ public class SplashFragment extends AppKitFragment{
 		return domain;
 	}
 
- loadInstanceInfo(String _domain, boolean isFromRedirect){
+ String loadInstanceInfo(String _domain, boolean isFromRedirect){
 		if(TextUtils.isEmpty(_domain) || _domain.indexOf('.')==-1)
 			return;
 		String domain=normalizeInstanceDomain(_domain);
@@ -186,7 +186,7 @@ public class SplashFragment extends AppKitFragment{
 					}
 				}
 			}*/
-			return;
+			return "0";
 		}
 }
 
