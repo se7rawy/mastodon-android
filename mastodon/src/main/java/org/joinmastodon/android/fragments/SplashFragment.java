@@ -158,7 +158,7 @@ protected void loadInstanceInfo(String _domain, boolean isFromRedirect, Consumer
 			}*/
 			return;
 		}
-
+}
 
 
 	private void onButtonClick(View v){
