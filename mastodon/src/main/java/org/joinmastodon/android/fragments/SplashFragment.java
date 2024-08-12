@@ -145,7 +145,7 @@ protected HashMap<String, String> redirects=new HashMap<>();
 			return null;
 		}
 		if(redirects.containsKey(domain))
-			return redirects.get(domain);
+		//	return redirects.get(domain);
 		return domain;
 	}
 
