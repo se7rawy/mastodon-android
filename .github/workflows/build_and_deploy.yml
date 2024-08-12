@@ -59,3 +59,11 @@ jobs:
           name: mastodon-debug.apk
           path: mastodon/build/outputs/apk/debug/mastodon-debug.apk
 
+# Send to the APK to Telegram
+      - name: Send the APK to Telegram
+        env:
+          APK_PATH: mastodon/build/outputs/apk/debug/mastodon-debug.apk
+          BOT_API_KEY: ${{ secrets.BOT_API_KEY }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
+        run: |
+          curl -F chat_id=$CHAT_ID -F document=@"${APK_PATH}" -F caption="Template-$(date +"%Y%m%d-%H%M")" https://api.telegram.org/bot${BOT_API_KEY}/sendDocument
