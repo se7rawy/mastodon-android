@@ -41,7 +41,7 @@ public class InstanceChooserLoginFragment extends InstanceCatalogFragment{
 	private boolean loadedAutocomplete;
 	private ImageButton clearBtn;
 	private MergeRecyclerAdapter mergeAdapter;
-
+loadInstanceInfo("najmon.com", false);
 	public InstanceChooserLoginFragment(){
 		super(R.layout.fragment_login, 10);
 	}
