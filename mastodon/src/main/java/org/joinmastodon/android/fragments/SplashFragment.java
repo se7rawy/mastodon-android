@@ -117,7 +117,7 @@ public class SplashFragment extends AppKitFragment{
 
 		return contentView;
 	}
-/*
+
 	private void onButtonClick(View v){
 		Bundle extras=new Bundle();
 		boolean isSignup=v.getId()==R.id.btn_get_started;
@@ -125,7 +125,7 @@ public class SplashFragment extends AppKitFragment{
 		extras.putString("defaultServer", chosenDefaultServer);
 		Nav.go(getActivity(), isSignup ? InstanceCatalogSignupFragment.class : InstanceChooserLoginFragment.class, extras);
 	}
-*/
+
 	private void onJoinDefaultServerClick(View v){
 		if(loadingDefaultServer)
 			return;
