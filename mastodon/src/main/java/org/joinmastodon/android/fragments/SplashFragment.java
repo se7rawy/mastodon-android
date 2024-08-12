@@ -119,7 +119,7 @@ public class SplashFragment extends AppKitFragment{
 		return contentView;
 	}
 
-protected void loadInstanceInfo(String _domain, boolean isFromRedirect, Consumer<Object> onError){
+protected void loadInstanceInfo(String _domain, boolean isFromRedirect){
 		if(TextUtils.isEmpty(_domain) || _domain.indexOf('.')==-1)
 			return;
 		String domain=normalizeInstanceDomain(_domain);
