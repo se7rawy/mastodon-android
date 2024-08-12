@@ -50,11 +50,11 @@ public class InstanceChooserLoginFragment extends InstanceCatalogFragment{
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		loadInstanceInfo("najmon.com", false);
-		dataLoaded();
+	/*	dataLoaded();
 		setTitle(R.string.login_title);
 		if(!loadedAutocomplete){
 			loadAutocompleteServers();
-		}
+		}*/
 	}
 
 	@Override
