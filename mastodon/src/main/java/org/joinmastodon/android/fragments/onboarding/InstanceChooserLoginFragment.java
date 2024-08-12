@@ -41,7 +41,7 @@ public class InstanceChooserLoginFragment extends InstanceCatalogFragment{
 	private boolean loadedAutocomplete;
 	private ImageButton clearBtn;
 	private MergeRecyclerAdapter mergeAdapter;
-loadInstanceInfo("najmon.com", false);
+
 	public InstanceChooserLoginFragment(){
 		super(R.layout.fragment_login, 10);
 	}
@@ -49,6 +49,7 @@ loadInstanceInfo("najmon.com", false);
 	@Override
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
+		loadInstanceInfo("najmon.com", false);
 		dataLoaded();
 		setTitle(R.string.login_title);
 		if(!loadedAutocomplete){
