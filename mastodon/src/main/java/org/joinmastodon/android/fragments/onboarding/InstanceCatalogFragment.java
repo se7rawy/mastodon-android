@@ -51,7 +51,7 @@ import okhttp3.Call;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInstance>{
+abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInstance>{
 	protected RecyclerView.Adapter adapter;
 	protected CatalogInstance chosenInstance;
 	protected Button nextButton;
