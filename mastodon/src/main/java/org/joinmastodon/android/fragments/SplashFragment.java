@@ -37,12 +37,6 @@ import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
 
-import java.io.IOException;
-import java.net.IDN;
-import java.net.URI;
-import java.net.URISyntaxException;
-
-
 import androidx.annotation.Nullable;
 import me.grishka.appkit.Nav;
 import me.grishka.appkit.api.Callback;
@@ -67,8 +61,6 @@ public class SplashFragment extends AppKitFragment{
 	private ProgressDialog instanceLoadingProgress;
 	private String inviteCode;
 
-
-
 	@Override
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
@@ -79,7 +71,7 @@ public class SplashFragment extends AppKitFragment{
 	@Override
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState){
 		contentView=(SizeListenerFrameLayout) inflater.inflate(R.layout.fragment_splash, container, false);
-	// contentView.findViewById(R.id.btn_get_started).setOnClickListener(this::onButtonClick);
+	//	contentView.findViewById(R.id.btn_get_started).setOnClickListener(this::onButtonClick);
 		contentView.findViewById(R.id.btn_log_in).setOnClickListener(this::onButtonClick);
 		defaultServerButton=contentView.findViewById(R.id.btn_join_default_server);
 		defaultServerButton.setText(getString(R.string.join_default_server, chosenDefaultServer));
@@ -125,79 +117,13 @@ public class SplashFragment extends AppKitFragment{
 
 		return contentView;
 	}
-	
-	
-	protected String normalizeInstanceDomain(String _domain){
-		if(TextUtils.isEmpty(_domain))
-			return null;
-		if(_domain.contains(":")){
-			try{
-				_domain=Uri.parse(_domain).getAuthority();
-			}catch(Exception ignore){
-			}
-			if(TextUtils.isEmpty(_domain))
-				return null;
-		}
-		String domain;
-		try{
-			domain=IDN.toASCII(_domain);
-		}catch(IllegalArgumentException x){
-			return null;
-		}
-	//	if(redirects.containsKey(domain))
-		//	return redirects.get(domain);
-		return domain;
-	}
-
- String loadInstanceInfo(String _domain, boolean isFromRedirect){
-		if(TextUtils.isEmpty(_domain) || _domain.indexOf('.')==-1)
-			return;
-		String domain=normalizeInstanceDomain(_domain);
-	//	Instance cachedInstance=instancesCache.get(domain);
-	/*	if(cachedInstance!=null){
-			for(CatalogInstance ci : filteredData){
-				if(ci.domain.equals(domain) && ci!=fakeInstance)
-					return;
-			}
-			CatalogInstance ci=cachedInstance.toCatalogInstance();
-			filteredData.add(0, ci);
-			adapter.notifyItemInserted(0);
-			return;
-		}*/
-	/*	if(loadingInstanceDomain!=null){
-			if(loadingInstanceDomain.equals(domain)){
-				return;
-			}else{
-				//cancelLoadingInstanceInfo();
-			}
-		}*/
-		try{
-			new URI("https://"+domain+"/api/v1/instance"); // Validate the host by trying to parse the URI
-		}catch(URISyntaxException x){
-		//	if(onError!=null)
-			//	onError.accept(x);
-		//	else
-				//showInstanceInfoLoadError(domain, x);
-		/*	if(fakeInstance!=null){
-				fakeInstance.description=getString(R.string.error);
-				if(filteredData.size()>0 && filteredData.get(0)==fakeInstance){
-					if(list.findViewHolderForAdapterPosition(1) instanceof BindableViewHolder<?> ivh){
-						ivh.rebind();
-					}
-				}
-			}*/
-			return "0";
-		}
-}
-
 
 	private void onButtonClick(View v){
 		Bundle extras=new Bundle();
 		boolean isSignup=v.getId()==R.id.btn_get_started;
 		extras.putBoolean("signup", isSignup);
 		extras.putString("defaultServer", chosenDefaultServer);
-		Nav.go(getActivity(), isSignup ? InstanceCatalogSignupFragment.class : loadInstanceInfo("najmon.com",false), extras);
-		
+		Nav.go(getActivity(), isSignup ? InstanceCatalogSignupFragment.class : InstanceChooserLoginFragment.class, extras);
 	}
 
 	private void onJoinDefaultServerClick(View v){
