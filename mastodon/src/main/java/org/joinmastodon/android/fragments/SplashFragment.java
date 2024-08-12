@@ -67,6 +67,8 @@ public class SplashFragment extends AppKitFragment{
 	private ProgressDialog instanceLoadingProgress;
 	private String inviteCode;
 
+protected HashMap<String, String> redirects=new HashMap<>();
+
 	@Override
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
