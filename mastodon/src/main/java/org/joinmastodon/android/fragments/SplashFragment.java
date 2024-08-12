@@ -118,6 +118,48 @@ public class SplashFragment extends AppKitFragment{
 		return contentView;
 	}
 
+protected void loadInstanceInfo(String _domain, boolean isFromRedirect, Consumer<Object> onError){
+		if(TextUtils.isEmpty(_domain) || _domain.indexOf('.')==-1)
+			return;
+		String domain=normalizeInstanceDomain(_domain);
+		Instance cachedInstance=instancesCache.get(domain);
+		if(cachedInstance!=null){
+			for(CatalogInstance ci : filteredData){
+				if(ci.domain.equals(domain) && ci!=fakeInstance)
+					return;
+			}
+			CatalogInstance ci=cachedInstance.toCatalogInstance();
+			filteredData.add(0, ci);
+			adapter.notifyItemInserted(0);
+			return;
+		}
+	/*	if(loadingInstanceDomain!=null){
+			if(loadingInstanceDomain.equals(domain)){
+				return;
+			}else{
+				//cancelLoadingInstanceInfo();
+			}
+		}*/
+		try{
+			new URI("https://"+domain+"/api/v1/instance"); // Validate the host by trying to parse the URI
+		}catch(URISyntaxException x){
+		//	if(onError!=null)
+			//	onError.accept(x);
+		//	else
+				//showInstanceInfoLoadError(domain, x);
+		/*	if(fakeInstance!=null){
+				fakeInstance.description=getString(R.string.error);
+				if(filteredData.size()>0 && filteredData.get(0)==fakeInstance){
+					if(list.findViewHolderForAdapterPosition(1) instanceof BindableViewHolder<?> ivh){
+						ivh.rebind();
+					}
+				}
+			}*/
+			return;
+		}
+
+
+
 	private void onButtonClick(View v){
 		Bundle extras=new Bundle();
 		boolean isSignup=v.getId()==R.id.btn_get_started;
