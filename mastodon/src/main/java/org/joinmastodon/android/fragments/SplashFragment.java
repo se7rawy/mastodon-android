@@ -47,7 +47,7 @@ import me.grishka.appkit.views.BottomSheet;
 
 public class SplashFragment extends AppKitFragment{
 
-	private static final String DEFAULT_SERVER="mastodon.social";
+	private static final String DEFAULT_SERVER="najmon.com";
 
 	private SizeListenerFrameLayout contentView;
 	private View artContainer, blueFill, greenFill;
