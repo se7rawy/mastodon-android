@@ -22,7 +22,7 @@ import org.joinmastodon.android.api.requests.catalog.GetCatalogDefaultInstances;
 import org.joinmastodon.android.api.requests.instance.GetInstance;
 import org.joinmastodon.android.fragments.onboarding.InstanceCatalogSignupFragment;
 import org.joinmastodon.android.fragments.onboarding.InstanceChooserLoginFragment;
-  import org.joinmastodon.android.fragments.onboarding.InstanceCatalogFragment;
+import org.joinmastodon.android.fragments.onboarding.InstanceCatalogFragment;
 import org.joinmastodon.android.fragments.onboarding.InstanceRulesFragment;
 import org.joinmastodon.android.model.Instance;
 import org.joinmastodon.android.model.catalog.CatalogDefaultInstance;
