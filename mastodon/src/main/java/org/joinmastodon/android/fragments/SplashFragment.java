@@ -122,8 +122,8 @@ protected void loadInstanceInfo(String _domain, boolean isFromRedirect, Consumer
 		if(TextUtils.isEmpty(_domain) || _domain.indexOf('.')==-1)
 			return;
 		String domain=normalizeInstanceDomain(_domain);
-		Instance cachedInstance=instancesCache.get(domain);
-		if(cachedInstance!=null){
+	//	Instance cachedInstance=instancesCache.get(domain);
+	/*	if(cachedInstance!=null){
 			for(CatalogInstance ci : filteredData){
 				if(ci.domain.equals(domain) && ci!=fakeInstance)
 					return;
@@ -132,7 +132,7 @@ protected void loadInstanceInfo(String _domain, boolean isFromRedirect, Consumer
 			filteredData.add(0, ci);
 			adapter.notifyItemInserted(0);
 			return;
-		}
+		}*/
 	/*	if(loadingInstanceDomain!=null){
 			if(loadingInstanceDomain.equals(domain)){
 				return;
