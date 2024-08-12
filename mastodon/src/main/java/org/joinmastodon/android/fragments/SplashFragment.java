@@ -144,7 +144,7 @@ public class SplashFragment extends AppKitFragment{
 		}catch(IllegalArgumentException x){
 			return null;
 		}
-		if(redirects.containsKey(domain))
+	//	if(redirects.containsKey(domain))
 		//	return redirects.get(domain);
 		return domain;
 	}
