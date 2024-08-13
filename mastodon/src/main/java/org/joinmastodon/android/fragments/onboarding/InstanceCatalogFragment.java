@@ -278,7 +278,7 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 ///////
 
 protected void loadInstanceInfo2(String _domain, boolean isFromRedirect){
-		loadInstanceInfo(_domain, isFromRedirect, null);
+		loadInstanceInfo2(_domain, isFromRedirect, null);
 	}
 
 	protected void loadInstanceInfo2(String _domain, boolean isFromRedirect, Consumer<Object> onError){
