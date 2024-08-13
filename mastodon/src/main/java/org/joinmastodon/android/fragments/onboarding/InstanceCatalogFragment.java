@@ -411,22 +411,14 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 		}
 		*/
 	//	onSearchChangedDebounced();
+	String domain=normalizeInstanceDomain("najmon.com");
+	Instance instance=instancesCache.get(domain);
 	getN();
 	currentSearchQuery="najmon.com";
 		currentSearchQueryButWithCasePreserved="najmon.com";
 		updateFilteredList();
 		loadInstanceInfo(currentSearchQuery, false);
-		String domain=normalizeInstanceDomain("najmon.com");
-	
-Timer timer = new Timer();
-timer.schedule(new TimerTask() {
-    @Override
-    public void run() {
-    Instance instance=instancesCache.get(domain);
-    }
-}, 2000);
-
-
+		
 Timer timer = new Timer();
 timer.schedule(new TimerTask() {
     @Override
