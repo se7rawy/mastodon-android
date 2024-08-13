@@ -310,13 +310,13 @@ protected void loadInstanceInfo2(String _domain, boolean isFromRedirect){
 				onError.accept(x);
 			else
 				showInstanceInfoLoadError(domain, x);
-			if(fakeInstance!=null){
+		/*	if(fakeInstance!=null){
 				fakeInstance.description=getString(R.string.error);
 				if(filteredData.size()>0 && filteredData.get(0)==fakeInstance){
 					if(list.findViewHolderForAdapterPosition(1) instanceof BindableViewHolder<?> ivh){
 						ivh.rebind();
 					}
-				}
+				}*/
 			}
 			return;
 		}
