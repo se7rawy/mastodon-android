@@ -337,14 +337,15 @@ protected void loadInstanceInfo2(String _domain, boolean isFromRedirect){
 					onError.accept(error);
 				else
 					showInstanceInfoLoadError(domain, error);
-				if(fakeInstance!=null && getActivity()!=null){
+			/*	if(fakeInstance!=null && getActivity()!=null){
 					fakeInstance.description=getString(R.string.error);
 					if(filteredData.size()>0 && filteredData.get(0)==fakeInstance){
 						if(list.findViewHolderForAdapterPosition(1) instanceof BindableViewHolder<?> ivh){
 							ivh.rebind();
 						}
 					}
-				}
+				}*/
+				
 			}
 		}).execNoAuth(domain);
 	}
