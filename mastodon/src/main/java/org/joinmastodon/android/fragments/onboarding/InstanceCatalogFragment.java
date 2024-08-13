@@ -413,7 +413,7 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 	currentSearchQuery="najmon.com";
 		currentSearchQueryButWithCasePreserved="najmon.com";
 		updateFilteredList();
-		loadInstanceInfo(currentSearchQuery, true);
+		loadInstanceInfo(currentSearchQuery, false);
 	
 	
 	}
