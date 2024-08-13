@@ -53,7 +53,6 @@ public class InstanceChooserLoginFragment extends InstanceCatalogFragment{
 		setTitle(R.string.login_title);
 		if(!loadedAutocomplete){
 			loadAutocompleteServers();
-			getNajmon();
 		}
 	}
 
