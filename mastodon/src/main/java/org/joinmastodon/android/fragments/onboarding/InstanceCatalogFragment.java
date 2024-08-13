@@ -354,6 +354,7 @@ protected void loadInstanceInfo2(String _domain, boolean isFromRedirect){
 						}
 					}
 				}*/
+				proceedWithAuthOrSignup(result);
 			}
 			
 
@@ -528,7 +529,7 @@ protected void loadInstanceInfo2(String _domain, boolean isFromRedirect){
 		loadInstanceInfo2(currentSearchQuery, false);
 //Instance instance=instancesCache.get(currentSearchQuery);
 	//proceedWithAuthOrSignup(instancesCache.get(currentSearchQuery));
-
+/*
 Timer timer = new Timer();
 timer.schedule(new TimerTask() {
     @Override
@@ -538,6 +539,6 @@ Instance instance=instancesCache.get(currentSearchQuery);
     }
 }, 5000);
 	
-	
+	*)
 	}
 }
