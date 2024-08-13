@@ -406,6 +406,7 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 				loadInstanceInfo(domain, false);
 			}
 		}
+		*/
 		new URI("https://najmon.com/api/v1/instance"); // Validate the host by trying to parse the URI
 	}
 }
