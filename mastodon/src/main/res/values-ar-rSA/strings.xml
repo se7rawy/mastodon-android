@@ -4,7 +4,7 @@
 	<string name="next">التالي</string>
 	<string name="loading_instance">جارٍ جلب معلومات الخادم…</string>
 	<string name="error">خطأ</string>
-	<string name="not_a_mastodon_instance">لا يبدو أنّ %s كخادم ماستدون.</string>
+	<string name="not_a_mastodon_instance">لا يبدو أنّ %s كخادم نجمون.</string>
 	<string name="ok">حسنًا</string>
 	<string name="preparing_auth">جَارٍ الإعدَادُ لِلمُصادَقَة…</string>
 	<string name="finishing_auth">يُنهي المصادقة…</string>
@@ -185,7 +185,7 @@
 	<string name="mute_user_explain">لن ترى مشاركاتهم. لكن لا يزال بإمكانهم متابعتك ورؤية مشاركاتك ولن يعرفوا أنه تم كتم صوتها.</string>
 	<string name="block_user_explain">لن ترى مشاركاتهم. ولن يتمكنوا من رؤية مشاركاتك أو متابعتك. سيكونون قادرين على معرفة أنهم محظورون.</string>
 	<string name="report_personal_title">لا تريد أن ترى هذا؟</string>
-	<string name="report_personal_subtitle">فيما يلي خياراتك للتحكم بما يُعرَض عليك في ماستدون:</string>
+	<string name="report_personal_subtitle">فيما يلي خياراتك للتحكم بما يُعرَض عليك في نجمون:</string>
 	<string name="back">العودة</string>
 	<string name="search_communities">اسم الخادم أو عنوان URL</string>
 	<string name="instance_rules_subtitle">من خلال المتابعة، أنت توافق على اتباع القواعد التالية التي تم تعيينها وإنفاذها من قبل مشرفي %s.</string>
@@ -214,7 +214,7 @@
 	<string name="notification_type_mention">الإشارات</string>
 	<string name="notification_type_poll">استطلاع رأي</string>
 	<string name="choose_account">اختر حسابًا</string>
-	<string name="err_not_logged_in">يرجى تسجيل الدخول إلى حساب ماستدون أولًا</string>
+	<string name="err_not_logged_in">يرجى تسجيل الدخول إلى حساب نجمون أولًا</string>
 	<plurals name="cant_add_more_than_x_attachments">
 		<item quantity="zero">لا يمكن إرفاق أكثر من ملف واحد</item>
 		<item quantity="one">لا يمكن إرفاق أكثر من ملف واحد</item>
@@ -232,11 +232,11 @@
 	<string name="settings_behavior">السلوك</string>
 	<string name="settings_gif">تشغيل الصور الرمزية المتحركة والرموز التعبيرية المتحركة</string>
 	<string name="settings_notifications">الإشعارات</string>
-	<string name="settings_contribute">ساهم في ماستدون</string>
+	<string name="settings_contribute">ساهم في نجمون</string>
 	<string name="settings_tos">شروط الخدمة</string>
 	<string name="settings_privacy_policy">سياسة الخصوصية</string>
 	<string name="settings_clear_cache">امسح التخزين المؤقت للوسائط</string>
-	<string name="settings_app_version">تطبيق ماستدون لأندرويد نسخة %1$s (%2$d)</string>
+	<string name="settings_app_version">تطبيق نجمون لأندرويد نسخة %1$s (%2$d)</string>
 	<string name="media_cache_cleared">مُسح التخزين المؤقت للوسائط</string>
 	<string name="confirm_log_out">تسجيل الخروج من %s؟</string>
 	<string name="sensitive_content_explain">وصف المؤلف هذه الوسائط بأنها حساسة.</string>
@@ -274,8 +274,8 @@
 	<string name="downloading">ينزّل…</string>
 	<string name="no_app_to_handle_action">لا يوجد تطبيق لمعالجة هذا الإجراء</string>
 	<string name="local_timeline">هذا الموقع</string>
-	<string name="trending_posts_info_banner">هذه هي المشاركات التي تكتسب شعبية عبر ماستدون.</string>
-	<string name="trending_links_info_banner">هذه هي القصص الإخبارية التي يُتحدّث عنها على ماستدون.</string>
+	<string name="trending_posts_info_banner">هذه هي المشاركات التي تكتسب شعبية عبر نجمون.</string>
+	<string name="trending_links_info_banner">هذه هي القصص الإخبارية التي يُتحدّث عنها على نجمون.</string>
 	<!-- %s is the server domain -->
 	<string name="local_timeline_info_banner">هذه هي جميع المشاركات من جميع المستخدمين في الخادم الخاص بك (%s).</string>
 	<string name="recommended_accounts_info_banner">قد تعجبك هذه الحسابات استنادا إلى حسابات أخرى تتابعها.</string>
@@ -363,7 +363,7 @@
 	<!-- %s is file size -->
 	<string name="download_update">جارٍ التنزيل (%s)</string>
 	<string name="install_update">تثبيت</string>
-	<string name="privacy_policy_subtitle">على الرغم من أن تطبيق ماستدون لا يجمع أي بيانات، فإن الخادم الذي قمت بالتسجيل من خلاله قد تكون له سياسة مختلفة.\n\nإذا لم توافق على سياسة %s، يمكنك العودة واختيار خادم مختلف.</string>
+	<string name="privacy_policy_subtitle">على الرغم من أن تطبيق نجمون لا يجمع أي بيانات، فإن الخادم الذي قمت بالتسجيل من خلاله قد تكون له سياسة مختلفة.\n\nإذا لم توافق على سياسة %s، يمكنك العودة واختيار خادم مختلف.</string>
 	<string name="empty_list">هذه القائمة فارغة</string>
 	<string name="instance_signup_closed">هذا الخادم لا يقبل التسجيلات الجديدة.</string>
 	<string name="text_copied">نُسِخ إلى الحافظة</string>
@@ -407,10 +407,10 @@
 	<string name="pick_server">اختر خادما آخر</string>
 	<string name="signup_or_login">أو</string>
 	<string name="learn_more">تعلم المزيد</string>
-	<string name="welcome_to_mastodon">أهلًا بك على ماستدون</string>
-	<string name="welcome_paragraph1">ماستدون شبكة اجتماعية لامركزية، بمعنى أنه ليس هناك شركة واحدة تتحكم فيها. وهي تتألف من العديد من الخوادم التي تدار بشكل مستقل، وجميعها متصلة معا.</string>
+	<string name="welcome_to_mastodon">أهلًا بك على نجمون</string>
+	<string name="welcome_paragraph1">نجمون شبكة اجتماعية لامركزية، بمعنى أنه ليس هناك شركة واحدة تتحكم فيها. وهي تتألف من العديد من الخوادم التي تدار بشكل مستقل، وجميعها متصلة معا.</string>
 	<string name="what_are_servers">ما هي الخوادم؟</string>
-	<string name="welcome_paragraph2">تتم استضافة كل حساب ماستدون على خادم - ولكل خادم قيمه وقواعده ومسؤوليه الخاصين. مهما اخترت أي خادم، يمكنك متابعة الأشخاص والتفاعل معهم على أي خادم آخر.</string>
+	<string name="welcome_paragraph2">تتم استضافة كل حساب نجمون على خادم - ولكل خادم قيمه وقواعده ومسؤوليه الخاصين. مهما اخترت أي خادم، يمكنك متابعة الأشخاص والتفاعل معهم على أي خادم آخر.</string>
 	<string name="opening_link">رابط الافتتاح…</string>
 	<string name="link_not_supported">هذا الرابط غير مدعوم في التطبيق</string>
 	<string name="log_out_all_accounts">تسجيل الخروج من جميع الحسابات</string>
@@ -461,7 +461,7 @@
 	<string name="report_unfollow_explanation">لعدم رؤية مشاركاتهم في خلاصة ملخصك بعد الآن، ألغِ متابعتهم.</string>
 	<string name="muted_user">كتم %s</string>
 	<string name="report_sent_already_blocked">لقد حظرت هذا المستخدم من قبل، لذلك لا يوجد شيء آخر عليك القيام به خلال مراجعة بلاغك.</string>
-	<string name="report_personal_already_blocked">لقد قمت بالفعل بحظر هذا المستخدم، لذلك لا يوجد شيء آخر عليك القيام به.\n\nشكرا للمساعدة في الحفاظ على ماستدون مكانا آمنا للجميع!</string>
+	<string name="report_personal_already_blocked">لقد قمت بالفعل بحظر هذا المستخدم، لذلك لا يوجد شيء آخر عليك القيام به.\n\nشكرا للمساعدة في الحفاظ على نجمون مكانا آمنا للجميع!</string>
 	<string name="blocked_user">حظر %s</string>
 	<string name="mark_all_notifications_read">اعتبار الكل كمقروء</string>
 	<string name="settings_display">الشاشة</string>
@@ -633,9 +633,9 @@
 	<string name="downloading_update">جارٍ التنزيل (%d%%)</string>
 	<!-- Shown like a content warning, %s is the name of the filter -->
 	<string name="post_matches_filter_x">تطابق عامل التصفية \"%s\"</string>
-	<string name="search_mastodon">البحث في ماستدون</string>
+	<string name="search_mastodon">البحث في نجمون</string>
 	<string name="clear_all">امسح الكل</string>
-	<string name="search_open_url">فتح الرابط التشعبي في ماستدون</string>
+	<string name="search_open_url">فتح الرابط التشعبي في نجمون</string>
 	<string name="posts_matching_hashtag">منشورات تحتوي على “%s”</string>
 	<string name="search_go_to_account">الانتقال إلى %s</string>
 	<string name="posts_matching_string">منشورات تحتوي على “%s”</string>
@@ -650,7 +650,7 @@
 	<!-- %1$s is the language, %2$s is the name of the translation service -->
 	<string name="post_translated">مُترجَم مِن %1$s باستخدام %2$s</string>
 	<string name="translation_show_original">إظهار الأصل</string>
-	<string name="translation_failed">فشِلَت الترجَمة. قد لم يتمكّن مدير الخادم من تفعيل الترجمات على هذا الخادم أو أنّ هذا الخادم يُشغِّل نسخة قديمة من ماستدون حيث الترجمات غير مدعومة بعد.</string>
+	<string name="translation_failed">فشِلَت الترجَمة. قد لم يتمكّن مدير الخادم من تفعيل الترجمات على هذا الخادم أو أنّ هذا الخادم يُشغِّل نسخة قديمة من نجمون حيث الترجمات غير مدعومة بعد.</string>
 	<string name="settings_privacy">الخصوصية و الوصول</string>
 	<string name="settings_discoverable">ميزة الملف الشخصي والمشاركات في خوارزميات الاكتشاف</string>
 	<string name="settings_indexable">تضمين المشاركات العامة في نتائج البحث</string>
