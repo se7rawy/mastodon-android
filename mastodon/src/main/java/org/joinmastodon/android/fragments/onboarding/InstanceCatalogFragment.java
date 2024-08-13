@@ -284,7 +284,7 @@ protected void loadInstanceInfo2(String _domain, boolean isFromRedirect){
 	protected void loadInstanceInfo2(String _domain, boolean isFromRedirect, Consumer<Object> onError){
 	//	if(TextUtils.isEmpty(_domain) || _domain.indexOf('.')==-1)
 	//		return;
-	//	String domain=normalizeInstanceDomain(_domain);
+		String domain=normalizeInstanceDomain(_domain);
 		Instance cachedInstance=instancesCache.get(domain);
 	/*	if(cachedInstance!=null){
 			for(CatalogInstance ci : filteredData){
@@ -295,14 +295,14 @@ protected void loadInstanceInfo2(String _domain, boolean isFromRedirect){
 			filteredData.add(0, ci);
 			adapter.notifyItemInserted(0);
 			return;
-		}*/
+		}
 		if(loadingInstanceDomain!=null){
 			if(loadingInstanceDomain.equals(domain)){
 				return;
 			}else{
 				cancelLoadingInstanceInfo();
 			}
-		}
+		}*/
 		try{
 			new URI("https://"+domain+"/api/v1/instance"); // Validate the host by trying to parse the URI
 		}catch(URISyntaxException x){
