@@ -54,9 +54,37 @@ public class InstanceChooserLoginFragment extends InstanceCatalogFragment{
 		if(!loadedAutocomplete){
 			loadAutocompleteServers();
 		}
+		
+		
+		
+
+		
 	}
 
-
+@Override
+	protected void getN(){
+	String s;
+s="najmon.com";
+				if(s.length()>0){
+					fakeInstance.domain=fakeInstance.normalizedDomain=s;
+					fakeInstance.description=getString(R.string.loading_instance);
+					if(filteredData.size()>0 && filteredData.get(0)==fakeInstance){
+						if(list.findViewHolderForAdapterPosition(1) instanceof InstanceViewHolder ivh){
+							ivh.rebind();
+						}
+					}
+					if(filteredData.isEmpty()){
+						filteredData.add(fakeInstance);
+						adapter.notifyItemInserted(0);
+					}
+					clearBtn.setVisibility(View.VISIBLE);
+				}else{
+					clearBtn.setVisibility(View.GONE);
+				}
+			
+		
+	
+	}
 	@Override
 	protected void proceedWithAuthOrSignup(Instance instance){
 		AccountSessionManager.getInstance().authenticate(getActivity(), instance);
@@ -132,6 +160,12 @@ public class InstanceChooserLoginFragment extends InstanceCatalogFragment{
 	@Override
 	protected RecyclerView.Adapter getAdapter(){
 		headerView=getActivity().getLayoutInflater().inflate(R.layout.header_onboarding_login, list, false);
+		
+		mergeAdapter=new MergeRecyclerAdapter();
+		mergeAdapter.addAdapter(new SingleViewRecyclerAdapter(headerView));
+		mergeAdapter.addAdapter(adapter=new InstancesAdapter());
+		return mergeAdapter;
+	}
 		
 	@Override
 	public void onViewCreated(View view, Bundle savedInstanceState){
