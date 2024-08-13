@@ -102,8 +102,8 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 			loadInstanceInfo(currentSearchQuery, false);
 		}else{
 			proceedWithAuthOrSignup(instance);
-		}
-		return true;*/
+		}*/
+		return true;
 	}
 	
 	protected void  getNajmon(){
