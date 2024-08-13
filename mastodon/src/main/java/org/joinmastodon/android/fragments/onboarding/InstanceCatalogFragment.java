@@ -89,7 +89,7 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 	protected abstract void proceedWithAuthOrSignup(Instance instance);
 
 	protected boolean onSearchEnterPressed(TextView v, int actionId, KeyEvent event){
-		if(event!=null && event.getAction()!=KeyEvent.ACTION_DOWN)
+	/*	if(event!=null && event.getAction()!=KeyEvent.ACTION_DOWN)
 			return true; 
 	//	searchEdit.setText("najmon.com");
 		currentSearchQuery=searchEdit.getText().toString().toLowerCase().trim();
@@ -103,7 +103,7 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 		}else{
 			proceedWithAuthOrSignup(instance);
 		}
-		return true;
+		return true;*/
 	}
 	
 	protected void  getNajmon(){
