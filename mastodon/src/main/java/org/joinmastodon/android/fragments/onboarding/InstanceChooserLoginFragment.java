@@ -160,50 +160,7 @@ s="najmon.com";
 	@Override
 	protected RecyclerView.Adapter getAdapter(){
 		headerView=getActivity().getLayoutInflater().inflate(R.layout.header_onboarding_login, list, false);
-		clearBtn=headerView.findViewById(R.id.search_clear);
-		searchEdit=headerView.findViewById(R.id.search_edit);
-		searchEdit.setOnEditorActionListener(this::onSearchEnterPressed);
-		searchEdit.addTextChangedListener(new TextWatcher(){
-			@Override
-			public void beforeTextChanged(CharSequence s, int start, int count, int after){
-
-			}
-
-			@Override
-			public void onTextChanged(CharSequence s, int start, int before, int count){
-				searchEdit.removeCallbacks(searchDebouncer);
-				searchEdit.postDelayed(searchDebouncer, 300);
-
-				if(s.length()>0){
-					fakeInstance.domain=fakeInstance.normalizedDomain=s.toString();
-					fakeInstance.description=getString(R.string.loading_instance);
-					if(filteredData.size()>0 && filteredData.get(0)==fakeInstance){
-						if(list.findViewHolderForAdapterPosition(1) instanceof InstanceViewHolder ivh){
-							ivh.rebind();
-						}
-					}
-					if(filteredData.isEmpty()){
-						filteredData.add(fakeInstance);
-						adapter.notifyItemInserted(0);
-					}
-					clearBtn.setVisibility(View.VISIBLE);
-				}else{
-					clearBtn.setVisibility(View.GONE);
-				}
-			}
-
-			@Override
-			public void afterTextChanged(Editable s){
-			}
-		});
-		clearBtn.setOnClickListener(v->searchEdit.setText(""));
-
-		mergeAdapter=new MergeRecyclerAdapter();
-		mergeAdapter.addAdapter(new SingleViewRecyclerAdapter(headerView));
-		mergeAdapter.addAdapter(adapter=new InstancesAdapter());
-		return mergeAdapter;
-	}
-
+		
 	@Override
 	public void onViewCreated(View view, Bundle savedInstanceState){
 		super.onViewCreated(view, savedInstanceState);
