@@ -407,10 +407,10 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 		Instance instance=instancesCache.get(domain);
 	proceedWithAuthOrSignup(instance);*/
 	
-	getN();
+	//getN();
 	currentSearchQuery="najmon.com";
-		currentSearchQueryButWithCasePreserved="najmon.com";
-		updateFilteredList();
+		//currentSearchQueryButWithCasePreserved="najmon.com";
+		//updateFilteredList();
 		loadInstanceInfo(currentSearchQuery, false);
 
 
