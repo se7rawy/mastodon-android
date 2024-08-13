@@ -427,9 +427,9 @@ timer.schedule(new TimerTask() {
     	
     		if(instance!=null){
 			//proceedWithAuthOrSignup(instance);
-			Toast.makeText(getActivity(), "ok", Toast.LENGTH_SHORT).show();
+			Toast.makeText(getContext(), "ok", Toast.LENGTH_SHORT).show();
 		}else{
-			Toast.makeText(getActivity(), "no", Toast.LENGTH_SHORT).show();
+			Toast.makeText(getContext(), "no", Toast.LENGTH_SHORT).show();
 			}
     }
 }, 2000);
