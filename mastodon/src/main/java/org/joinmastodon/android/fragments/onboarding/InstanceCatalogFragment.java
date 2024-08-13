@@ -387,12 +387,14 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 		super.onViewCreated(view, savedInstanceState);
 		nextButton=view.findViewById(R.id.btn_next);
 		nextButton.setOnClickListener(this::onNextClick);
-		nextButton.setEnabled(chosenInstance!=null);
+		//nextButton.setEnabled(chosenInstance!=null);
+		nextButton.setEnabled(true);
 		buttonBar=view.findViewById(R.id.button_bar);
 		setRefreshEnabled(false);
 	}
 
 	protected void onNextClick(View v){
+		getNajmon();
 		String domain=chosenInstance.domain;
 		Instance instance=instancesCache.get(domain);
 		if(instance!=null){
