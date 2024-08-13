@@ -409,7 +409,7 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 		}
 		*/
 	//	onSearchChangedDebounced();
-	
+	getN();
 	
 	}
 }
