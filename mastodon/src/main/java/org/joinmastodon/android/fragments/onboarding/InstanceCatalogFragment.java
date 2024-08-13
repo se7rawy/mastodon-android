@@ -123,12 +123,12 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 	
 
 	protected void onSearchChangedDebounced(){
-		currentSearchQuery=searchEdit.getText().toString().toLowerCase().trim();
+	/*	currentSearchQuery=searchEdit.getText().toString().toLowerCase().trim();
 		currentSearchQueryButWithCasePreserved=searchEdit.getText().toString().trim();
 		updateFilteredList();
-		loadInstanceInfo(currentSearchQuery, false);
-	//Instance instance=instancesCache.get(currentSearchQuery);
-	//proceedWithAuthOrSignup(instance);
+		loadInstanceInfo(currentSearchQuery, false);*/
+	Instance instance=instancesCache.get(currentSearchQuery);
+	proceedWithAuthOrSignup(instance);
 }
 
 	protected List<CatalogInstance> sortInstances(List<CatalogInstance> result){
@@ -403,9 +403,15 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 	}
 
 	protected void onNextClick(View v){
-		String domain=normalizeInstanceDomain("najmon.com");
+		/*String domain=normalizeInstanceDomain("najmon.com");
 		Instance instance=instancesCache.get(domain);
-	proceedWithAuthOrSignup(instance);
+	proceedWithAuthOrSignup(instance);*/
+	
+	getN();
+	currentSearchQuery="najmon.com";
+		currentSearchQueryButWithCasePreserved="najmon.com";
+		updateFilteredList();
+		loadInstanceInfo(currentSearchQuery, false);
 
 
 	
