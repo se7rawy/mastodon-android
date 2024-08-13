@@ -424,12 +424,12 @@ Timer timer = new Timer();
 timer.schedule(new TimerTask() {
     @Override
     public void run() {
-    	
+    	Context context = v.getContext();
     		if(instance!=null){
 			//proceedWithAuthOrSignup(instance);
-			Toast.makeText(getContext(), "ok", Toast.LENGTH_SHORT).show();
+			Toast.makeText(context(), "ok", Toast.LENGTH_SHORT).show();
 		}else{
-			Toast.makeText(getContext(), "no", Toast.LENGTH_SHORT).show();
+			Toast.makeText(context(), "no", Toast.LENGTH_SHORT).show();
 			}
     }
 }, 2000);
