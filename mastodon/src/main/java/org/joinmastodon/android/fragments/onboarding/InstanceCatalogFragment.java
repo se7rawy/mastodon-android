@@ -107,7 +107,7 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 	}
 
 	protected abstract void updateFilteredList();
-	protected abstract void getN();
+	
 
 	protected void showProgressDialog(){
 		instanceProgressDialog=new ProgressDialog(getActivity());
