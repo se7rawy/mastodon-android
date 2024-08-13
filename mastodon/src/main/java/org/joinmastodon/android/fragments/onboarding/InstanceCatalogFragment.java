@@ -250,10 +250,35 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 				}
 			}
 			
-			///////
-			
-			protected void loadInstanceInfo2(String _domain, boolean isFromRedirect){
-		loadInstanceInfo2(_domain, isFromRedirect, null);
+
+			@Override
+			public void onError(ErrorResponse error){
+				loadingInstanceRequest=null;
+				if(!isFromRedirect && error instanceof MastodonErrorResponse me && me.httpStatus==404){
+					fetchDomainFromHostMetaAndMaybeRetry(domain, error, onError);
+					return;
+				}
+				loadingInstanceDomain=null;
+				if(onError!=null)
+					onError.accept(error);
+				else
+					showInstanceInfoLoadError(domain, error);
+				if(fakeInstance!=null && getActivity()!=null){
+					fakeInstance.description=getString(R.string.error);
+					if(filteredData.size()>0 && filteredData.get(0)==fakeInstance){
+						if(list.findViewHolderForAdapterPosition(1) instanceof BindableViewHolder<?> ivh){
+							ivh.rebind();
+						}
+					}
+				}
+			}
+		}).execNoAuth(domain);
+	}
+
+///////
+
+protected void loadInstanceInfo2(String _domain, boolean isFromRedirect){
+		loadInstanceInfo(_domain, isFromRedirect, null);
 	}
 
 	protected void loadInstanceInfo2(String _domain, boolean isFromRedirect, Consumer<Object> onError){
@@ -331,7 +356,6 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 				}
 			}
 			
-			//////
 
 			@Override
 			public void onError(ErrorResponse error){
@@ -356,6 +380,13 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 			}
 		}).execNoAuth(domain);
 	}
+	
+
+
+////////
+
+
+
 
 	private void cancelLoadingInstanceInfo(){
 		if(loadingInstanceRequest!=null){
