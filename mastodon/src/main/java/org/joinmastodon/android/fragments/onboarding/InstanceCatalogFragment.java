@@ -335,7 +335,7 @@ protected void loadInstanceInfo2(String _domain, boolean isFromRedirect){
 					instanceProgressDialog.dismiss();
 					instanceProgressDialog=null;
 				}
-				if(Objects.equals(domain, currentSearchQuery) || Objects.equals(currentSearchQuery, redirects.get(domain)) || Objects.equals(currentSearchQuery, redirectsInverse.get(domain))){
+			/*	if(Objects.equals(domain, currentSearchQuery) || Objects.equals(currentSearchQuery, redirects.get(domain)) || Objects.equals(currentSearchQuery, redirectsInverse.get(domain))){
 					boolean found=false;
 					for(CatalogInstance ci:filteredData){
 						if(ci.domain.equals(domain) && ci!=fakeInstance){
@@ -353,7 +353,7 @@ protected void loadInstanceInfo2(String _domain, boolean isFromRedirect){
 							adapter.notifyItemInserted(0);
 						}
 					}
-				}
+				}*/
 			}
 			
 
