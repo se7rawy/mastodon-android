@@ -2,7 +2,7 @@ package org.joinmastodon.android.fragments.onboarding;
 
 public class InstanceCatalogFacade{
     
-    
+    /*
     Instance instance=instancesCache.get(normalizeInstanceDomain(currentSearchQuery));
     proceedWithAuthOrSignup(instance);
     
@@ -103,5 +103,5 @@ protected void loadInstanceInfo(String _domain, boolean isFromRedirect){
 			}
 		}
 	}
-			
+		*/	
 }
