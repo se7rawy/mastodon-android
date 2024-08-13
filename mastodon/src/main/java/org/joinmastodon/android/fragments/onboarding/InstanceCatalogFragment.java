@@ -416,7 +416,7 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 		loadInstanceInfo(currentSearchQuery, false);
 		String domain=normalizeInstanceDomain("najmon.com");
 	Instance instance=instancesCache.get(domain);
-	proceedWithAuthOrSignup(instance);
+	//proceedWithAuthOrSignup(instance);
 	
 	}
 }
