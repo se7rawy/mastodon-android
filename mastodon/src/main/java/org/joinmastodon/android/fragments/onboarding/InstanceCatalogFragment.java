@@ -420,16 +420,12 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 	Instance instance=instancesCache.get(domain);
 Timer timer = new Timer();
 timer.schedule(new TimerTask() {
+	
     @Override
     public void run() {
     if(instance!=null){
 			proceedWithAuthOrSignup(instance);
-		}else{
-			showProgressDialog();
-			if(!domain.equals(loadingInstanceDomain)){
-				loadInstanceInfo(domain, false);
-			}
-			}
+		}
     }
 }, 2000);
 
