@@ -84,17 +84,9 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 	protected abstract void proceedWithAuthOrSignup(Instance instance);
 
 	protected boolean onSearchEnterPressed(TextView v, int actionId, KeyEvent event){
-	//	if(event!=null && event.getAction()!=KeyEvent.ACTION_DOWN)
-		//	return true; 
-		  if (searchEdit.getText().toString().trim().isEmpty()) {
-      
-        searchEdit.post(new Runnable() {
-            @Override
-            public void run() {
-                searchEdit.setText("najmon.com");
-            }
-        });
-    }
+		if(event!=null && event.getAction()!=KeyEvent.ACTION_DOWN)
+			return true; 
+	//	searchEdit.setText("najmon.com");
 		currentSearchQuery=searchEdit.getText().toString().toLowerCase().trim();
 		currentSearchQueryButWithCasePreserved=searchEdit.getText().toString().trim();
 		updateFilteredList();
