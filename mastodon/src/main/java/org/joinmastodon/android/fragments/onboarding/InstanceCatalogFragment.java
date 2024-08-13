@@ -60,7 +60,7 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 	protected RecyclerView.Adapter adapter;
 	protected CatalogInstance chosenInstance;
 	protected Button nextButton;
-	protected EditText searchEdit;
+	//protected EditText searchEdit;
 	protected Runnable searchDebouncer=this::onSearchChangedDebounced;
 	protected String currentSearchQuery;
 	protected String currentSearchQueryButWithCasePreserved;
@@ -88,48 +88,7 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 
 	protected abstract void proceedWithAuthOrSignup(Instance instance);
 
-	protected boolean onSearchEnterPressed(TextView v, int actionId, KeyEvent event){
-	/*	if(event!=null && event.getAction()!=KeyEvent.ACTION_DOWN)
-			return true; 
-	//	searchEdit.setText("najmon.com");
-		currentSearchQuery=searchEdit.getText().toString().toLowerCase().trim();
-		currentSearchQueryButWithCasePreserved=searchEdit.getText().toString().trim();
-		updateFilteredList();
-		searchEdit.removeCallbacks(searchDebouncer);
-		Instance instance=instancesCache.get(normalizeInstanceDomain(currentSearchQuery));
-		if(instance==null){
-			showProgressDialog();
-			loadInstanceInfo(currentSearchQuery, false);
-		}else{
-			proceedWithAuthOrSignup(instance);
-		}*/
-		return true;
-	}
 	
-	protected void  getNajmon(){
-	currentSearchQuery="najmon.com";
-		currentSearchQueryButWithCasePreserved="najmon.com";
-		updateFilteredList();
-		
-		Instance instance=instancesCache.get(normalizeInstanceDomain(currentSearchQuery));
-		if(instance==null){
-			showProgressDialog();
-			loadInstanceInfo(currentSearchQuery, false);
-		}else{
-			proceedWithAuthOrSignup(instance);
-		}
-		}
-	
-	
-
-	protected void onSearchChangedDebounced(){
-	/*	currentSearchQuery=searchEdit.getText().toString().toLowerCase().trim();
-		currentSearchQueryButWithCasePreserved=searchEdit.getText().toString().trim();
-		updateFilteredList();
-		loadInstanceInfo(currentSearchQuery, false);*/
-	Instance instance=instancesCache.get(currentSearchQuery);
-	proceedWithAuthOrSignup(instance);
-}
 
 	protected List<CatalogInstance> sortInstances(List<CatalogInstance> result){
 		Map<Boolean, List<CatalogInstance>> byLang=result.stream().sorted(Comparator.comparingInt((CatalogInstance ci)->ci.lastWeekUsers).reversed()).collect(Collectors.groupingBy(ci->ci.approvalRequired));
