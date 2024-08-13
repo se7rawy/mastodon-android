@@ -100,6 +100,7 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 		return true;
 	}
 	
+	protected void  getNajmon(){
 	currentSearchQuery="najmon.com";
 		currentSearchQueryButWithCasePreserved="najmon.com";
 		updateFilteredList();
@@ -111,7 +112,7 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 		}else{
 			proceedWithAuthOrSignup(instance);
 		}
-		
+		}
 	
 	
 
