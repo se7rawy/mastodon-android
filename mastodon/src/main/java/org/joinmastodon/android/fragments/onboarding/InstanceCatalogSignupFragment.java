@@ -90,6 +90,9 @@ public class InstanceCatalogSignupFragment extends InstanceCatalogFragment{
 	}
 
 	@Override
+	public void getN(){
+		}
+	@Override
 	public void onAttach(Context context){
 		super.onAttach(context);
 		setRefreshEnabled(false);
