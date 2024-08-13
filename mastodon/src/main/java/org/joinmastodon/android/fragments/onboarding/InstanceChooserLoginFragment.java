@@ -56,29 +56,30 @@ public class InstanceChooserLoginFragment extends InstanceCatalogFragment{
 		}
 		
 		
-		getN();
+		
 
 		
 	}
 
-void getN(){
+@Override
+	protected void getN(){
 	String s;
 s="najmon.com";
 				if(s.length()>0){
 					fakeInstance.domain=fakeInstance.normalizedDomain=s;
 					fakeInstance.description=getString(R.string.loading_instance);
-				/*	if(filteredData.size()>0 && filteredData.get(0)==fakeInstance){
+					if(filteredData.size()>0 && filteredData.get(0)==fakeInstance){
 						if(list.findViewHolderForAdapterPosition(1) instanceof InstanceViewHolder ivh){
 							ivh.rebind();
 						}
-					}*/
+					}
 					if(filteredData.isEmpty()){
 						filteredData.add(fakeInstance);
-					//	adapter.notifyItemInserted(0);
+						adapter.notifyItemInserted(0);
 					}
-				//	clearBtn.setVisibility(View.VISIBLE);
+					clearBtn.setVisibility(View.VISIBLE);
 				}else{
-					//clearBtn.setVisibility(View.GONE);
+					clearBtn.setVisibility(View.GONE);
 				}
 			
 		
