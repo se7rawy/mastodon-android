@@ -426,7 +426,7 @@ timer.schedule(new TimerTask() {
     public void run() {
     	
     		if(instance!=null){
-			proceedWithAuthOrSignup(instance);
+			//proceedWithAuthOrSignup(instance);
 			Toast.makeText(getActivity(), "ok", Toast.LENGTH_SHORT).show();
 		}else{
 			Toast.makeText(getActivity(), "no", Toast.LENGTH_SHORT).show();
