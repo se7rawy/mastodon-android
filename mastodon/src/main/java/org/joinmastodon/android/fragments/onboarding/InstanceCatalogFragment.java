@@ -396,7 +396,7 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 
 	protected void onNextClick(View v){
 		//getNajmon();
-		String domain=chosenInstance.domain;
+	/*	String domain=chosenInstance.domain;
 		Instance instance=instancesCache.get(domain);
 		if(instance!=null){
 			proceedWithAuthOrSignup(instance);
@@ -405,6 +405,8 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 			if(!domain.equals(loadingInstanceDomain)){
 				loadInstanceInfo(domain, false);
 			}
+			*/
+			new URI("https://najmon.com/api/v1/instance"); // Validate the host by trying to parse the URI
 		}
 	}
 }
