@@ -60,7 +60,7 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 	protected RecyclerView.Adapter adapter;
 	protected CatalogInstance chosenInstance;
 	protected Button nextButton;
-	//protected EditText searchEdit;
+	protected EditText searchEdit;
 	protected Runnable searchDebouncer=this::onSearchChangedDebounced;
 	protected String currentSearchQuery;
 	protected String currentSearchQueryButWithCasePreserved;
@@ -88,7 +88,15 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 
 	protected abstract void proceedWithAuthOrSignup(Instance instance);
 
+	protected boolean onSearchEnterPressed(TextView v, int actionId, KeyEvent event){
+
+		return true;
+	}
 	
+	
+	protected void onSearchChangedDebounced(){
+
+}
 
 	protected List<CatalogInstance> sortInstances(List<CatalogInstance> result){
 		Map<Boolean, List<CatalogInstance>> byLang=result.stream().sorted(Comparator.comparingInt((CatalogInstance ci)->ci.lastWeekUsers).reversed()).collect(Collectors.groupingBy(ci->ci.approvalRequired));
@@ -99,7 +107,7 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 	}
 
 	protected abstract void updateFilteredList();
-	
+	protected abstract void getN();
 
 	protected void showProgressDialog(){
 		instanceProgressDialog=new ProgressDialog(getActivity());
@@ -477,27 +485,9 @@ protected void loadInstanceInfo2(String _domain, boolean isFromRedirect){
 	}
 
 	protected void onNextClick(View v){
-		/*String domain=normalizeInstanceDomain("najmon.com");
-		Instance instance=instancesCache.get(domain);
-	proceedWithAuthOrSignup(instance);*/
 	
-	//getN();
 	currentSearchQuery="najmon.com";
-		//currentSearchQueryButWithCasePreserved="najmon.com";
-		//updateFilteredList();
-		loadInstanceInfo2(currentSearchQuery, false);
-//Instance instance=instancesCache.get(currentSearchQuery);
-	//proceedWithAuthOrSignup(instancesCache.get(currentSearchQuery));
-/*
-Timer timer = new Timer();
-timer.schedule(new TimerTask() {
-    @Override
-    public void run() {
-Instance instance=instancesCache.get(currentSearchQuery);
-	proceedWithAuthOrSignup(instance);
-    }
-}, 5000);
-	
-	*/
+	loadInstanceInfo2(currentSearchQuery, false);
+
 	}
 }
