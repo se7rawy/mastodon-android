@@ -422,7 +422,7 @@ timer.schedule(new TimerTask() {
     public void run() {
     proceedWithAuthOrSignup(instance);
     }
-}, 1000);
+}, 2000);
 	
 	
 	}
