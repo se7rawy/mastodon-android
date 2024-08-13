@@ -394,9 +394,9 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 	}
 
 	protected void onNextClick(View v){
-		getNajmon();
+		//getNajmon();
 		String domain=chosenInstance.domain;
-		Instance instance=instancesCache.get(domain);
+		Instance instance=instancesCache.get("najmon.com");
 		if(instance!=null){
 			proceedWithAuthOrSignup(instance);
 		}else{
