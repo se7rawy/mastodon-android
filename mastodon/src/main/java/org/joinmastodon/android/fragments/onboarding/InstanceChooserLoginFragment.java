@@ -162,7 +162,6 @@ s="najmon.com";
 		headerView=getActivity().getLayoutInflater().inflate(R.layout.header_onboarding_login, list, false);
 		clearBtn=headerView.findViewById(R.id.search_clear);
 		searchEdit=headerView.findViewById(R.id.search_edit);
-		searchEdit.setVisibility(View.GONE);
 		searchEdit.setOnEditorActionListener(this::onSearchEnterPressed);
 		searchEdit.addTextChangedListener(new TextWatcher(){
 			@Override
