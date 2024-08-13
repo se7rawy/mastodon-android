@@ -85,7 +85,8 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 
 	protected boolean onSearchEnterPressed(TextView v, int actionId, KeyEvent event){
 		if(event!=null && event.getAction()!=KeyEvent.ACTION_DOWN)
-			return true;
+			return true; 
+		searchEdit.setText("najmon.com");
 		currentSearchQuery=searchEdit.getText().toString().toLowerCase().trim();
 		currentSearchQueryButWithCasePreserved=searchEdit.getText().toString().trim();
 		updateFilteredList();
@@ -388,7 +389,7 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 		nextButton=view.findViewById(R.id.btn_next);
 		nextButton.setOnClickListener(this::onNextClick);
 		//nextButton.setEnabled(chosenInstance!=null);
-		nextButton.setEnabled(true);
+		
 		buttonBar=view.findViewById(R.id.button_bar);
 		setRefreshEnabled(false);
 	}
@@ -396,7 +397,7 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 	protected void onNextClick(View v){
 		//getNajmon();
 		String domain=chosenInstance.domain;
-		Instance instance=instancesCache.get("najmon.com");
+		Instance instance=instancesCache.get(domain);
 		if(instance!=null){
 			proceedWithAuthOrSignup(instance);
 		}else{
