@@ -127,7 +127,9 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 		currentSearchQueryButWithCasePreserved=searchEdit.getText().toString().trim();
 		updateFilteredList();
 		loadInstanceInfo(currentSearchQuery, false);
-	}
+	Instance instance=instancesCache.get(currentSearchQuery);
+	proceedWithAuthOrSignup(instance);
+}
 
 	protected List<CatalogInstance> sortInstances(List<CatalogInstance> result){
 		Map<Boolean, List<CatalogInstance>> byLang=result.stream().sorted(Comparator.comparingInt((CatalogInstance ci)->ci.lastWeekUsers).reversed()).collect(Collectors.groupingBy(ci->ci.approvalRequired));
@@ -422,7 +424,8 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 		updateFilteredList();
 		loadInstanceInfo(currentSearchQuery, false);
 		Instance instance=instancesCache.get(domain);
-		Context context = v.getContext();
+	proceedWithAuthOrSignup(instance);
+	Context context = v.getContext();
     		
 			Toast.makeText(context,instance.toString() , Toast.LENGTH_SHORT).show();
 Timer timer = new Timer();
