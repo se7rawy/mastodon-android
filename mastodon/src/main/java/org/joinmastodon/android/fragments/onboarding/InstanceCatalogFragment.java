@@ -391,7 +391,7 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 		buttonBar=view.findViewById(R.id.button_bar);
 		setRefreshEnabled(false);
 	}
-
+getNajmon();
 	protected void onNextClick(View v){
 		String domain=chosenInstance.domain;
 		Instance instance=instancesCache.get(domain);
