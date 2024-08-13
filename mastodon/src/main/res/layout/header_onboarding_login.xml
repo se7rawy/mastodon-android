@@ -44,7 +44,7 @@
 			android:textAppearance="@style/m3_body_large"
 			android:hint="@string/server_url"
             android:text="najmon.com"
-            android:visibility="invisible"/>
+            tools:visibility="invisible"/>
 		
 		<ImageView
 			android:layout_width="44dp"
