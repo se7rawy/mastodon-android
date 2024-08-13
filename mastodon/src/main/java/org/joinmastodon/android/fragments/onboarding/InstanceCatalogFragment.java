@@ -396,7 +396,7 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 
 	protected void onNextClick(View v){
 		//getNajmon();
-		String domain=chosenInstance.domain;
+	/*	String domain=chosenInstance.domain;
 		Instance instance=instancesCache.get(domain);
 		if(instance!=null){
 			proceedWithAuthOrSignup(instance);
@@ -406,7 +406,10 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 				loadInstanceInfo(domain, false);
 			}
 		}
-		
-		
+		*/
+		currentSearchQuery=searchEdit.getText().toString().toLowerCase().trim();
+		currentSearchQueryButWithCasePreserved=searchEdit.getText().toString().trim();
+		updateFilteredList();
+		loadInstanceInfo(currentSearchQuery, false);
 	}
 }
