@@ -99,6 +99,21 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 		}
 		return true;
 	}
+	
+	currentSearchQuery="najmon.com";
+		currentSearchQueryButWithCasePreserved="najmon.com";
+		updateFilteredList();
+		
+		Instance instance=instancesCache.get(normalizeInstanceDomain(currentSearchQuery));
+		if(instance==null){
+			showProgressDialog();
+			loadInstanceInfo(currentSearchQuery, false);
+		}else{
+			proceedWithAuthOrSignup(instance);
+		}
+		
+	
+	
 
 	protected void onSearchChangedDebounced(){
 		currentSearchQuery=searchEdit.getText().toString().toLowerCase().trim();
