@@ -702,5 +702,8 @@
 	<string name="list_find_users">البحث عن مستخدمين للإضافة</string>
 	<!-- %s is a time interval ("5 months") -->
 	<!-- Shown on a button that saves a file, after it was successfully saved -->
+	<string name="tab_home">الرئيسية</string>
+	<string name="tab_search">استكشف</string>
+	<string name="tab_profile">الملف الشخصي</string>
 	<!-- %s is the username -->
 </resources>
