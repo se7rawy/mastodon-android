@@ -127,8 +127,8 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 		currentSearchQueryButWithCasePreserved=searchEdit.getText().toString().trim();
 		updateFilteredList();
 		loadInstanceInfo(currentSearchQuery, false);
-	Instance instance=instancesCache.get(currentSearchQuery);
-	proceedWithAuthOrSignup(instance);
+	//Instance instance=instancesCache.get(currentSearchQuery);
+	//proceedWithAuthOrSignup(instance);
 }
 
 	protected List<CatalogInstance> sortInstances(List<CatalogInstance> result){
@@ -403,44 +403,10 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 	}
 
 	protected void onNextClick(View v){
-		//getNajmon();
-	/*	String domain=chosenInstance.domain;
-		Instance instance=instancesCache.get(domain);
-		if(instance!=null){
-			proceedWithAuthOrSignup(instance);
-		}else{
-			showProgressDialog();
-			if(!domain.equals(loadingInstanceDomain)){
-				loadInstanceInfo(domain, false);
-			}
-		}
-		*/
-	//	onSearchChangedDebounced();
-	String domain=normalizeInstanceDomain("najmon.com");
-	
-	getN();
-	currentSearchQuery="najmon.com";
-		currentSearchQueryButWithCasePreserved="najmon.com";
-		updateFilteredList();
-		loadInstanceInfo(currentSearchQuery, false);
+		String domain=normalizeInstanceDomain("najmon.com");
 		Instance instance=instancesCache.get(domain);
 	proceedWithAuthOrSignup(instance);
-	Context context = v.getContext();
-    		
-			Toast.makeText(context,instance.toString() , Toast.LENGTH_SHORT).show();
-Timer timer = new Timer();
-timer.schedule(new TimerTask() {
-    @Override
-    public void run() {
-    //	Context context = v.getContext();
-    		if(instance!=null){
-			//proceedWithAuthOrSignup(instance);
-			//Toast.makeText(context, "ok", Toast.LENGTH_SHORT).show();
-		}else{
-			//Toast.makeText(context, "no", Toast.LENGTH_SHORT).show();
-			}
-    }
-}, 2000);
+
 
 	
 	}
