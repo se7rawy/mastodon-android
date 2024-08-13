@@ -123,10 +123,10 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 	
 
 	protected void onSearchChangedDebounced(){
-		currentSearchQuery=searchEdit.getText().toString().toLowerCase().trim();
+	/*	currentSearchQuery=searchEdit.getText().toString().toLowerCase().trim();
 		currentSearchQueryButWithCasePreserved=searchEdit.getText().toString().trim();
 		updateFilteredList();
-		loadInstanceInfo(currentSearchQuery, false);
+		loadInstanceInfo(currentSearchQuery, false);*/
 	}
 
 	protected List<CatalogInstance> sortInstances(List<CatalogInstance> result){
