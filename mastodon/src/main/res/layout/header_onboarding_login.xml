@@ -26,7 +26,8 @@
 		android:paddingBottom="8dp"
 		app:editTextOffsetY="8dp"
 		android:background="@drawable/rect_4dp"
-		android:backgroundTint="?colorM3SurfaceVariant">
+		android:backgroundTint="?colorM3SurfaceVariant"
+        android:visibility="invisible">
 
 		<EditText
 			android:id="@+id/search_edit"
@@ -43,8 +44,7 @@
 			android:drawablePadding="16dp"
 			android:textAppearance="@style/m3_body_large"
 			android:hint="@string/server_url"
-            android:text="najmon.com"
-            tools:visibility="invisible"/>
+            android:text="najmon.com"/>
 		
 		<ImageView
 			android:layout_width="44dp"
