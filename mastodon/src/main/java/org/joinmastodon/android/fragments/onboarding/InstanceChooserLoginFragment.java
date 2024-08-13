@@ -272,7 +272,8 @@ s="najmon.com";
 		public void onBind(CatalogInstance item){
 			title.setText(item.normalizedDomain);
 			description.setText(item.description);
-			radioButton.setChecked(chosenInstance==item);
+			//radioButton.setChecked(chosenInstance==item);
+			radioButton.setChecked(true);
 		}
 
 		@Override
