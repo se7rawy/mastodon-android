@@ -2,6 +2,16 @@ package org.joinmastodon.android.fragments.onboarding;
 
 public class InstanceCatalogFacade{
     
+    
+    Instance instance=instancesCache.get(normalizeInstanceDomain(currentSearchQuery));
+    proceedWithAuthOrSignup(instance);
+    
+    @Override
+	protected void proceedWithAuthOrSignup(Instance instance){
+		AccountSessionManager.getInstance().authenticate(getActivity(), instance);
+	}
+    
+    
 protected void loadInstanceInfo(String _domain, boolean isFromRedirect){
 		loadInstanceInfo(_domain, isFromRedirect, null);
 	}
