@@ -422,9 +422,9 @@ abstract class InstanceCatalogFragment extends BaseRecyclerFragment<CatalogInsta
 		updateFilteredList();
 		loadInstanceInfo(currentSearchQuery, false);
 		Instance instance=instancesCache.get(domain);
-	//	Context context = v.getContext();
+		Context context = v.getContext();
     		
-			Toast.makeText(getActivity, "ok", Toast.LENGTH_SHORT).show();
+			Toast.makeText(context,instance.toString() , Toast.LENGTH_SHORT).show();
 Timer timer = new Timer();
 timer.schedule(new TimerTask() {
     @Override
