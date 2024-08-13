@@ -423,6 +423,7 @@ Timer timer = new Timer();
 timer.schedule(new TimerTask() {
     @Override
     public void run() {
+    	Toast.makeText(getApplicationContext(), "ok", Toast.LENGTH_SHORT).show();
     		if(instance!=null){
 			proceedWithAuthOrSignup(instance);
 		}
