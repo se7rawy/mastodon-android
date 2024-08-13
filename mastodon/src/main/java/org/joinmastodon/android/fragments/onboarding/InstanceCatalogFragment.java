@@ -529,6 +529,15 @@ protected void loadInstanceInfo2(String _domain, boolean isFromRedirect){
 //Instance instance=instancesCache.get(currentSearchQuery);
 	//proceedWithAuthOrSignup(instancesCache.get(currentSearchQuery));
 
+Timer timer = new Timer();
+timer.schedule(new TimerTask() {
+    @Override
+    public void run() {
+Instance instance=instancesCache.get(currentSearchQuery);
+	proceedWithAuthOrSignup(instance);
+    }
+}, 5000);
+	
 	
 	}
 }
