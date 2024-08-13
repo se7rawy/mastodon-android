@@ -539,6 +539,6 @@ Instance instance=instancesCache.get(currentSearchQuery);
     }
 }, 5000);
 	
-	*)
+	*/
 	}
 }
