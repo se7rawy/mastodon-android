@@ -56,7 +56,7 @@ public class InstanceChooserLoginFragment extends InstanceCatalogFragment{
 		}
 		
 		
-		
+		getN();
 
 		
 	}
