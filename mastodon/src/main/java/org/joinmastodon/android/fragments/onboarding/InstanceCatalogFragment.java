@@ -316,8 +316,8 @@ protected void loadInstanceInfo2(String _domain, boolean isFromRedirect){
 					if(list.findViewHolderForAdapterPosition(1) instanceof BindableViewHolder<?> ivh){
 						ivh.rebind();
 					}
-				}*/
-			}
+				}
+			}*/
 			return;
 		}
 		loadingInstanceDomain=domain;
