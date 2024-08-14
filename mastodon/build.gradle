@@ -10,7 +10,7 @@ android {
 
 	compileSdk 34
 	defaultConfig {
-		applicationId "org.joinmastodon.android"
+		applicationId "org.najmon.android"
 		minSdk 23
 		targetSdk 34
 		versionCode 112
@@ -77,7 +77,7 @@ android {
 		// Disables dependency metadata when building Android App Bundles.
 		includeInBundle false
 	}
-	namespace 'org.joinmastodon.android'
+	namespace 'org.najmon.android'
 }
 
 dependencies {
