@@ -46,7 +46,8 @@ jobs:
        #   SUPPLY_JSON_KEY_DATA: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
        #   SUPPLY_SKIP_UPLOAD_METADATA: true
        #   SUPPLY_SKIP_UPLOAD_CHANGELOGS: true
-
+      - name: Clean project
+        run: ./gradlew clean
       - name: Build debug apk
         run: ./gradlew assembleDebug
        # env:
