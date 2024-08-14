@@ -363,7 +363,7 @@
 	<!-- %s is file size -->
 	<string name="download_update">جارٍ التنزيل (%s)</string>
 	<string name="install_update">تثبيت</string>
-	<string name="privacy_policy_subtitle">على الرغم من أن تطبيق نجمون لا يجمع أي بيانات، فإن الخادم الذي قمت بالتسجيل من خلاله قد تكون له سياسة مختلفة.\n\nإذا لم توافق على سياسة %s، يمكنك العودة واختيار خادم مختلف.</string>
+    <string name="privacy_policy_subtitle"> تطبيق نجمون لا يجمع أي بيانات.</string>
 	<string name="empty_list">هذه القائمة فارغة</string>
 	<string name="instance_signup_closed">هذا الخادم لا يقبل التسجيلات الجديدة.</string>
 	<string name="text_copied">نُسِخ إلى الحافظة</string>
