@@ -52,7 +52,7 @@ public class InstanceChooserLoginFragment extends InstanceCatalogFragment{
 		dataLoaded();
 		setTitle(R.string.login_title);
 		if(!loadedAutocomplete){
-			loadAutocompleteServers();
+		//	loadAutocompleteServers();
 		}	
 	}
 
