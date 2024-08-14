@@ -80,7 +80,7 @@ public class GoogleMadeMeAddThisFragment extends ToolbarFragment{
 
 	//	items.add(new Item("Mastodon for Android Privacy Policy", getString(R.string.privacy_policy_explanation), "joinmastodon.org", "https://joinmastodon.org/android/privacy", "https://joinmastodon.org/favicon-32x32.png"));
 		loadServerPrivacyPolicy();
-		*/
+		
 	}
 
 	@Override
