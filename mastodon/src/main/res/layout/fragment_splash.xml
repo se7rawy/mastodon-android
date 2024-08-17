@@ -97,7 +97,8 @@
 			android:layout_gravity="center_horizontal"
 			android:layout_marginTop="32dp"
 			android:importantForAccessibility="no"
-			android:src="@drawable/splash_logo"/>
+			android:src="@drawable/splash_logo"
+            android:visibility="invisible"/>
 
 		<Space
 			android:layout_width="1px"
